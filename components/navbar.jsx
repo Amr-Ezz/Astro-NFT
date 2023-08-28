@@ -2,6 +2,7 @@
 import { theme } from "../themes/theme";
 import React from "react";
 import { styled } from "styled-components";
+import { Button } from "../shared/styledComponent";
 
 const Navbar = () => {
   const NavbarContainer = styled.nav`
@@ -14,7 +15,7 @@ const Navbar = () => {
 
   const NavbarLogo = styled.div`
     font-size: ${theme.textStyles.h5.fontSize};
-
+    color: white;
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -36,26 +37,14 @@ const Navbar = () => {
       text-decoration: none;
       color: white;
       padding: 0.5rem 0.5rem;
-      transition: ${theme.backgroundSecondary} 0.2s;
+      transition: all 0.2s ease;
 
       &:hover {
         background-color: ${theme.callToAction};
-        border-radius: 20px;
       }
     }
   `;
-  const Button = styled.button`
-    background-color: ${theme.callToAction};
-    font-size: ${theme.textStyles.body.fontSize};
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 50px;
-    color: white;
-    border-radius: 20px;
-  `;
+
   const StyledSvg = ({ color }) => (
     <svg
       width="24"
