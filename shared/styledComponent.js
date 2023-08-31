@@ -77,6 +77,36 @@ export const Button = styled.button`
     }
   }
 `;
+export const ButtonSecondary = styled.button`
+  background-color: transparent;
+  font-size: ${(props) => props.theme.textStyles.body.fontSize};
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 60px;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px ${(props) => props.theme.callToAction};
+  transition: all 0.9s ease;
+  svg path {
+    fill: ${(props) => props.theme.callToAction};
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    background-color ${(props) => props.theme.callToAction};
+    
+    cursor: pointer;
+    color: ${(props) => props.theme.callToAction};
+    svg path {
+      fill: white;
+    }
+  }
+`;
 export const HeroSection = styled.div`
   width: 100%;
   height: 100%;
@@ -145,5 +175,123 @@ export const StyledSvg = styled.svg`
   }
   &:hover path {
     fill: ${(props) => props.theme.callToAction};
+  }
+`;
+export const TrendingDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  background-color: ${(props) => props.theme.background};
+  padding: 4rem;
+`;
+export const TrendingCards = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+  > img.big {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+  }
+ 
+  > img:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  > img:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+   > div.imagesNo {
+    background-color: ${(props) => props.theme.callToAction};
+    border-radius: 20px;
+    max-width: fit-content;
+    grid-column: 3;
+    grid-row: 2;
+   
+    p {
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: white;
+    }
+  }
+    > div.textBox {
+
+      grid-column: 1 / span 3;
+      grid-row: 3;
+      div.artistSection {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        img {
+          width: 20px;
+          border-radius: 100%;
+          margin: 0;
+        }
+        p {
+          color: white;
+          margin: 0;
+        }
+      }
+    }
+  }
+`;
+export const RowDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: space-between;
+`;
+export const TopCreators = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  color: white;
+  padding: 4rem;
+  background-color: ${(props) => props.theme.background};
+`;
+export const CreatorsCards = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 20px;
+  padding-top: 2rem;
+`;
+export const CreatorsCard = styled.div`
+  background-color: ${(props) => props.theme.backgroundSecondary};
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+
+  img {
+    width: 180px;
+    padding: 1rem;
+  }
+  p {
+    color: #858584;
+    font-weight: 300;
+    span {
+      color: white;
+    }
+  }
+  div {
+    position: absolute;
+    width: 40px;
+    left: 10px;
+    top: 5px;
+
+    border-radius: 100%;
+    color: white;
+    background-color: ${(props) => props.theme.background};
+    p {
+      color: white;
+      padding-left: 15px;
+    }
   }
 `;
