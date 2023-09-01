@@ -268,6 +268,11 @@ export const CreatorsCard = styled.div`
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
 
   img {
     width: 180px;
@@ -293,5 +298,73 @@ export const CreatorsCard = styled.div`
       color: white;
       padding-left: 15px;
     }
+  }
+`;
+export const CategoriesDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: ${(props) => props.theme.background};
+  padding: 4rem;
+`;
+export const CategoriesCards = styled.div`
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 30px;
+`;
+export const CategoriesCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  border-radius: 20px;
+  background-color: ${(props) => props.theme.backgroundSecondary};
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    filter: blur(10px);
+  }
+  p {
+    color: white;
+    font-weight: Bold;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: ${(props) => props.theme.backgroundSecondary};
+    z-index: 2;
+    border-radius: 20px;
+  }
+  .icon-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+export const DiscoverDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 4rem;
+  background-color: ${(props) => props.theme.background};
+`;
+export const DiscoverHeading = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  .button {
+    justify-self: flex-end;
   }
 `;

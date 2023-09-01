@@ -19,8 +19,23 @@ import {
   ButtonSecondary,
   CreatorsCards,
   CreatorsCard,
+  CategoriesDiv,
+  H4,
+  CategoriesCards,
+  CategoriesCard,
+  DiscoverDiv,
+  DiscoverHeading,
 } from "../shared/styledComponent";
-
+import {
+  ArtIcon,
+  MagicWandIcon,
+  MusicIcon,
+  PlanetIcon,
+  SwatchesIcon,
+  VideoIcon,
+  BasketBallIcon,
+  CameraIcon,
+} from "../shared/icons/icons";
 export default function Home() {
   return (
     <ThemeProvider theme={theme}>
@@ -335,6 +350,77 @@ export default function Home() {
           </CreatorsCard>
         </CreatorsCards>
       </TopCreators>
+      <CategoriesDiv>
+        <H2>Browse categories</H2>
+        <CategoriesCards>
+          <CategoriesCard>
+            <img src="/Categories.png" />
+            <p>Art</p>
+            <div className="icon-container">
+              <ArtIcon />
+            </div>
+          </CategoriesCard>
+          <CategoriesCard>
+            <img src="/Categories(1).png" />
+            <p>Collectives</p>
+            <div className="icon-container">
+              <SwatchesIcon />
+            </div>
+          </CategoriesCard>
+          <CategoriesCard>
+            <img src="/Categories(2).png" />
+            <p>Music</p>
+            <div className="icon-container">
+              <MusicIcon />
+            </div>
+          </CategoriesCard>
+          <CategoriesCard>
+            <img src="/Categories(3).png" />
+            <p>Photography</p>
+            <div className="icon-container">
+              <CameraIcon />
+            </div>
+          </CategoriesCard>
+          <CategoriesCard>
+            <img src="/Categories(4).png" />
+            <p>Video</p>
+            <div className="icon-container">
+              <VideoIcon />
+            </div>
+          </CategoriesCard>
+          <CategoriesCard>
+            <img src="/Categories(5).png" />
+            <p>Utility</p>
+            <div className="icon-container">
+              <MagicWandIcon />
+            </div>
+          </CategoriesCard>
+          <CategoriesCard>
+            <img src="/Categories(6).png" />
+            <p>Sport</p>
+            <div className="icon-container">
+              <BasketBallIcon />
+            </div>
+          </CategoriesCard>
+          <CategoriesCard>
+            <img src="/Categories(7).png" />
+            <p>Virtual Worlds</p>
+            <div className="icon-container">
+              <PlanetIcon />
+            </div>
+          </CategoriesCard>
+        </CategoriesCards>
+      </CategoriesDiv>
+      <DiscoverDiv>
+        <H2>Discover More NFTs</H2>
+
+        <DiscoverHeading>
+          <BodyText>Explore New Trending NFTs</BodyText>
+          <div className="button">
+            <ButtonSecondary>See All</ButtonSecondary>
+          </div>
+        </DiscoverHeading>
+      </DiscoverDiv>
     </ThemeProvider>
   );
 }
