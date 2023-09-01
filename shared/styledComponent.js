@@ -82,12 +82,13 @@ export const ButtonSecondary = styled.button`
   font-size: ${(props) => props.theme.textStyles.body.fontSize};
   display: flex;
   flex-direction: row;
-  gap: 5px;
+  gap: 20px;
   padding: 1rem;
   justify-content: center;
   align-items: center;
   width: fit-content;
   height: 60px;
+  width: 200px;
   color: white;
   border-radius: 20px;
   box-shadow: 2px 2px 4px ${(props) => props.theme.callToAction};
@@ -361,10 +362,57 @@ export const DiscoverDiv = styled.div`
 `;
 export const DiscoverHeading = styled.div`
   display: flex;
+  position: relative;
   flex-direction: row;
   width: 100%;
   justify-content: flex-start;
   .button {
-    justify-self: flex-end;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+  }
+`;
+export const DiscoverCards = styled.div`
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 30px;
+  padding: 1rem;
+`;
+export const DiscoverCard = styled.div`
+  color: white;
+  font-weight: 600;
+  flex-direction: column;
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
+  background-color: ${(props) => props.theme.backgroundSecondary};
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  .discoverDes {
+    padding: 1rem;
+  }
+  .DiscoverSub {
+    img {
+      height: fit-content;
+      margin-top: 10px;
+    }
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .DiscoverStats {
+    p {
+      color: #858584;
+      span {
+        color: white;
+      }
+    }
   }
 `;

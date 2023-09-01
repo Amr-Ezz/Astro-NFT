@@ -25,6 +25,8 @@ import {
   CategoriesCard,
   DiscoverDiv,
   DiscoverHeading,
+  DiscoverCards,
+  DiscoverCard,
 } from "../shared/styledComponent";
 import {
   ArtIcon,
@@ -35,6 +37,7 @@ import {
   VideoIcon,
   BasketBallIcon,
   CameraIcon,
+  EyeIcon,
 } from "../shared/icons/icons";
 export default function Home() {
   return (
@@ -417,9 +420,92 @@ export default function Home() {
         <DiscoverHeading>
           <BodyText>Explore New Trending NFTs</BodyText>
           <div className="button">
-            <ButtonSecondary>See All</ButtonSecondary>
+            <ButtonSecondary>
+              {" "}
+              <EyeIcon /> See All
+            </ButtonSecondary>
           </div>
         </DiscoverHeading>
+        <DiscoverCards>
+          <DiscoverCard>
+            <img src="/Discover(1).png" />
+            <div className="discoverDes">
+              <p>NFT Name</p>
+              <div className="DiscoverSub">
+                <img src="/NFT Artist.png" />
+                <p>NFT Artist</p>
+              </div>
+              <div className="DiscoverStats">
+                <RowDiv>
+                  <div>
+                    <p>
+                      Price <br />
+                      <span>1.63 ETH</span>
+                    </p>
+                  </div>
+                  <div>
+                    <p>
+                      Highest Bid <br />
+                      <span>0.33 wETH</span>
+                    </p>
+                  </div>
+                </RowDiv>
+              </div>
+            </div>
+          </DiscoverCard>{" "}
+          <DiscoverCard>
+            <img src="/Discover(2).png" />
+            <div className="discoverDes">
+              <p>NFT Name</p>
+              <div className="DiscoverSub">
+                <img src="/NFT Artist.png" />
+                <p>NFT Artist</p>
+              </div>
+              <div className="DiscoverStats">
+                <RowDiv>
+                  <div>
+                    <p>
+                      Price <br />
+                      <span>1.63 ETH</span>
+                    </p>
+                  </div>
+                  <div>
+                    <p>
+                      Highest Bid <br />
+                      <span>0.33 wETH</span>
+                    </p>
+                  </div>
+                </RowDiv>
+              </div>
+            </div>
+          </DiscoverCard>{" "}
+          <DiscoverCard>
+            <img src="/Discover(3).png" />
+            <div className="discoverDes">
+              <p>NFT Name</p>
+              <div className="DiscoverSub">
+                <img src="/NFT Artist.png" />
+                <p>NFT Artist</p>
+              </div>
+              <div className="DiscoverStats">
+                <RowDiv>
+                  <div>
+                    <p>
+                      Price <br />
+                      <span>1.63 ETH</span>
+                    </p>
+                  </div>
+                  <div>
+                    <p>
+                      Highest Bid <br />
+                      <span>0.33 wETH</span>
+                    </p>
+                  </div>
+                </RowDiv>
+              </div>
+            </div>
+          </DiscoverCard>
+        </DiscoverCards>
       </DiscoverDiv>
     </ThemeProvider>
   );
