@@ -1,5 +1,6 @@
 "use client";
 import styled from "styled-components";
+import { MessageIcon } from "./icons/icons";
 
 export const gradientDiv = styled.div`
   background: linear-gradient(
@@ -416,3 +417,215 @@ export const DiscoverCard = styled.div`
     }
   }
 `;
+export const MushroomBanner = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  background-color: ${(props) => props.theme.background};
+  img {
+    background-size: cover;
+    height: 640px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: linear-gradient(
+      to top,
+      ${(props) => props.theme.gradientPrimary},
+      transparent
+    );
+  }
+  .subSection {
+    z-index: 3;
+    position: absolute;
+    left: 10rem;
+    display: flex;
+    gap: 100px;
+    align-items: center;
+  }
+`;
+
+export const FirstColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding-top: 20rem;
+  img {
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+  }
+`;
+export const ArtistButton = styled.button`
+  display: flex;
+  flex-direcrion: column;
+  align-items: center;
+  justify-content: space-around;
+  border-style: none;
+  background-color: ${(props) => props.theme.background};
+  width: 150px;
+  border-radius: 20px;
+  p {
+    font-weight: 600;
+    font-size: normal;
+    color: white;
+  }
+`;
+export const ButtonTeriarty = styled.button`
+  width: 200px;
+  height: 50px;
+  font-weight: 500;
+  font-size: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 20px;
+  border-style: none;
+  background-color: white;
+`;
+export const SecondColumn = styled.div`
+  align-self: flex-end;
+  margin-left: 10rem;
+  width: 300px;
+  height: fit-content;
+  display: column;
+  padding: 1rem;
+
+  border-radius: 20px;
+  color: white;
+  background-color: rgba(59, 59, 59, 0.5);
+`;
+export const GetStarted = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  padding: 4rem;
+  background-color: ${(props) => props.theme.background};
+`;
+export const GetStartedCards = styled.div`
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  grid-column-gap: 40px;
+  grid-row-gap: 30px;
+  padding: 1rem;
+`;
+export const GetStartedCard = styled.div`
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
+  background-color: ${(props) => props.theme.backgroundSecondary};
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  .Info {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      padding-left: 2rem;
+      line-height: 1.5em;
+      font-style: none;
+      font-weight: 200;
+    }
+  }
+`;
+export const SubscribeSection = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: ${(props) => props.theme.background};
+  position: relative;
+`;
+export const SubscribeCard = styled.div`
+  height: 70%;
+  width: 80%;
+  padding: 1rem;
+  margin-left: 8rem;
+  background-color: ${(props) => props.theme.backgroundSecondary};
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+  align-content: center;
+  color: white;
+  .imageSection {
+    background-size: contain;
+  }
+  .columnDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-content: center;
+  }
+`;
+export const FormContainer = styled.div`
+  background-color: white;
+
+  border-radius: 40px;
+  form {
+    display: flex;
+    border-radius: 40px;
+
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
+export const EmailInput = styled.input`
+  padding: 10px;
+  border-style: none;
+  border-radius: 40px;
+`;
+export const SubscribeButton = styled.button`
+  background-color: ${(props) => props.theme.callToAction};
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  width: 50%;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 20px;
+  transition: all 0.9s ease;
+
+  &:hover {
+    background-color: ${(props) => props.theme.backgroundSecondary};
+    box-shadow: 2px 2px 4px ${(props) => props.theme.callToAction};
+    cursor: pointer;
+  }
+`;
+
+export const EmailForm = () => {
+  return (
+    <FormContainer>
+      <form>
+        <EmailInput type="email" placeholder="Enter your email here" />
+        <SubscribeButton type="submit">
+          <MessageIcon />
+          Subscribe
+        </SubscribeButton>
+      </form>
+    </FormContainer>
+  );
+};

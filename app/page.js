@@ -27,6 +27,18 @@ import {
   DiscoverHeading,
   DiscoverCards,
   DiscoverCard,
+  MushroomBanner,
+  FirstColumn,
+  ArtistButton,
+  ButtonTeriarty,
+  SecondColumn,
+  GetStarted,
+  GetStartedCards,
+  GetStartedCard,
+  SubscribeSection,
+  SubscribeCard,
+  H3,
+  EmailForm,
 } from "../shared/styledComponent";
 import {
   ArtIcon,
@@ -507,6 +519,76 @@ export default function Home() {
           </DiscoverCard>
         </DiscoverCards>
       </DiscoverDiv>
+      <MushroomBanner>
+        <div className="subSection">
+          <FirstColumn>
+            <ArtistButton>
+              <img src="/Avatar Placeholder.png" alt="avatar image" />
+              <p>Shroomie</p>
+            </ArtistButton>
+            <H2>Magic Mushroom</H2>
+            <ButtonTeriarty>
+              <EyeIcon /> See NFT
+            </ButtonTeriarty>
+          </FirstColumn>
+          <SecondColumn>
+            <p> The Auction ends in :</p>
+            <H2>59 : 59 : 59</H2>
+            <p>Hours : Minutes : Seconds</p>
+          </SecondColumn>
+        </div>
+        <img src="/Primary Photo Placeholder (1).png" alt="Mushroom image" />
+        <div className="gradient" />
+      </MushroomBanner>
+      <GetStarted>
+        <H2>How It Works</H2>
+        <BodyText>Find Out How To Get Started</BodyText>
+        <GetStartedCards>
+          <GetStartedCard>
+            <img src="/Icon.png" />
+            <div className="Info">
+              <H5>Setup Your Wallet</H5>
+              <p>
+                Set up your wallet of choice. <br />
+                Connect it to the Animarket by clicking the wallet icon in the
+                top right corner.
+              </p>
+            </div>
+          </GetStartedCard>{" "}
+          <GetStartedCard>
+            <img src="/Icon (1).png" />
+            <div className="Info">
+              <H5>Create Collection</H5>
+              <p>
+                Upload your work and setup your collection. <br /> Add a
+                description, social links and floor price.
+              </p>
+            </div>
+          </GetStartedCard>{" "}
+          <GetStartedCard>
+            <img src="/Icon (2).png" />
+            <div className="Info">
+              <H5>Start Earning</H5>
+              <p>
+                Choose between auctions and fixed-price listings. <br /> Start
+                earning by selling your NFTs or trading others.
+              </p>
+            </div>
+          </GetStartedCard>
+        </GetStartedCards>
+      </GetStarted>
+      <SubscribeSection>
+        <SubscribeCard>
+          <div className="imageSection">
+            <img src="/Subscribe.png" alt="image" />
+          </div>
+          <div className="columnDiv">
+            <H3>Join Our Weekly Digest</H3>
+            <p>Get exclusive promotions & updates straight to your inbox.</p>
+            <EmailForm />
+          </div>
+        </SubscribeCard>
+      </SubscribeSection>
     </ThemeProvider>
   );
 }
