@@ -39,6 +39,7 @@ import {
   SubscribeCard,
   H3,
   EmailForm,
+  Footer,
 } from "../shared/styledComponent";
 import {
   ArtIcon,
@@ -50,6 +51,11 @@ import {
   BasketBallIcon,
   CameraIcon,
   EyeIcon,
+  HomeFront,
+  DiscordIcon,
+  YoutubeIcon,
+  InstagramIcon,
+  TwitterIcon,
 } from "../shared/icons/icons";
 export default function Home() {
   return (
@@ -589,6 +595,37 @@ export default function Home() {
           </div>
         </SubscribeCard>
       </SubscribeSection>
+      <Footer>
+        <div className="footerRow">
+          <div className="footerColumn">
+            <H4>
+              {" "}
+              <HomeFront color={theme.callToAction} />
+              NFT Marketplace
+            </H4>
+            <p>NFT marketplace UI created with Anima for Figma.</p>
+            <p>Join our community</p>
+            <div className="footerIcons">
+              <DiscordIcon /> <YoutubeIcon /> <InstagramIcon /> <TwitterIcon />
+            </div>
+          </div>
+          <div className="footerColumn">
+            <ul>
+              <H4>Explore</H4>
+              <p>Marketplace</p>
+              <p>Rankings</p>
+              <p>Connect a wallet</p>
+            </ul>
+          </div>
+          <div className="footerColumn">
+            <H4>Join Our Weekly Digest</H4>
+            <p>Get exclusive promotions & updates straight to your inbox</p>
+            <EmailForm />
+          </div>
+          <hr />
+        </div>
+        <p>Ⓒ NFT Market. Use this template freely.</p>
+      </Footer>
     </ThemeProvider>
   );
 }

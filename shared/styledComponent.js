@@ -555,6 +555,7 @@ export const SubscribeSection = styled.div`
   height: 100%;
   background-color: ${(props) => props.theme.background};
   position: relative;
+  padding-bottom: 4rem;
 `;
 export const SubscribeCard = styled.div`
   height: 70%;
@@ -597,10 +598,11 @@ export const EmailInput = styled.input`
 `;
 export const SubscribeButton = styled.button`
   background-color: ${(props) => props.theme.callToAction};
-  border-radius: 20px;
+  border-radius: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border-style: none;
   gap: 10px;
   width: 50%;
   color: white;
@@ -629,3 +631,41 @@ export const EmailForm = () => {
     </FormContainer>
   );
 };
+export const Footer = styled.div`
+  background-color: ${(props) => props.theme.backgroundSecondary};
+  width: 100%;
+  height: 100%;
+  p {
+    color: white;
+    position: relative;
+  }
+  .footerRow {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    justify-content: center;
+    gap: 100px;
+    position: relative;
+    hr {
+      border: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-top: 1px solid white;
+      width: 100%;
+      margin: 0;
+    }
+
+    .footerColumn {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      color: white;
+      .footerIcons {
+        flex-direction: row;
+        gap: 5px;
+      }
+    }
+  }
+`;
