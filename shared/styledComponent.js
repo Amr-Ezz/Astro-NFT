@@ -134,6 +134,7 @@ export const Carddiv = styled.div`
   padding: 0.5rem;
   img {
     object-fit: contain;
+    width: fit-content;
   }
   div {
     background-color: ${(props) => props.theme.backgroundSecondary};

@@ -1,16 +1,16 @@
 "use client";
-import Navbar from "@/components/navbar";
+import Navbar from "../components/navbar";
 import "./globals.css";
 import { ThemeProvider } from "styled-components";
-import { theme } from "@/themes/theme";
-
+import { theme } from "../themes/theme";
+import { Providers } from "@/utils/providers";
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html>
       <body>
         <ThemeProvider theme={theme}>
           <Navbar />
-          {children}
+          <Providers>{children}</Providers>
         </ThemeProvider>
       </body>
     </html>

@@ -57,7 +57,20 @@ import {
   InstagramIcon,
   TwitterIcon,
 } from "../shared/icons/icons";
+import { useQuery } from "@tanstack/react-query";
+import { fetchGames } from "./api/games";
 export default function Home() {
+  const {
+    data: games,
+    error: gameError,
+    isLoading: gameLoading,
+  } = useQuery(["games"], fetchGames);
+  if (gameError) {
+    return <div>error: {gameError.message}</div>;
+  }
+  if (gameLoading) {
+    return <div>loading....</div>;
+  }
   return (
     <ThemeProvider theme={theme}>
       <HeroSection>
@@ -123,13 +136,18 @@ export default function Home() {
         </Captiondiv>
 
         <Carddiv>
-          <img src="./Image Placeholder.png" />
-          <div>
-            <p>Space Walking</p>
-            <span>
-              <img src="./Artist Card.png" />
-            </span>
-          </div>
+          {games &&
+            games?.map((game) => (
+              <div key={game.id}>
+                <img src={game.background_image} />
+                <div>
+                  <p>{game.name}</p>
+                  <span>
+                    <img src="./Artist Card.png" />
+                  </span>
+                </div>
+              </div>
+            ))}
         </Carddiv>
       </HeroSection>
       <TrendingDiv>
