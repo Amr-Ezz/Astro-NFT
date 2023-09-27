@@ -128,17 +128,18 @@ export const Captiondiv = styled.div`
 export const Carddiv = styled.div`
   display: grid;
   grid-template-rows: 80% 20%;
-  width: 100%;
-  height: 100%;
+  // width: 100%;
+  // height: 100%;
   border-radius: 20px;
   padding: 0.5rem;
   img {
     object-fit: contain;
-    width: fit-content;
+    width: 100%;
+    padding: 1rem 1rem;
   }
   div {
     background-color: ${(props) => props.theme.backgroundSecondary};
-    width: 65.3%;
+    width: fit-content;
     display: flex;
     color: white;
     flex-direction: column;
@@ -190,55 +191,25 @@ export const TrendingDiv = styled.div`
 export const TrendingCards = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 10px;
-  > img.big {
+  grid-gap: 10px;
+  padding: 1rem;
+  background-color: ${(props) => props.theme.backgroundSecondary};
+  border-radius: 20px;
+  .big {
     grid-column: 1 / span 3;
-    grid-row: 1;
-  }
- 
-  > img:nth-child(2) {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  > img:nth-child(3) {
-    grid-column: 2;
-    grid-row: 2;
+    width: 100%;
+    display: block;
   }
 
-   > div.imagesNo {
-    background-color: ${(props) => props.theme.callToAction};
-    border-radius: 20px;
-    max-width: fit-content;
-    grid-column: 3;
-    grid-row: 2;
-   
+  img:not(.big) {
+    width: 100%;
+    display: block;
+  }
+  .game-title {
+    grid-column: 1 / span 3;
     p {
-      font-size: 1.9rem;
       font-weight: 600;
       color: white;
-    }
-  }
-    > div.textBox {
-
-      grid-column: 1 / span 3;
-      grid-row: 3;
-      div.artistSection {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        flex-wrap: nowrap;
-        align-items: flex-start;
-        img {
-          width: 20px;
-          border-radius: 100%;
-          margin: 0;
-        }
-        p {
-          color: white;
-          margin: 0;
-        }
-      }
     }
   }
 `;

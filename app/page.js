@@ -137,7 +137,7 @@ export default function Home() {
 
         <Carddiv>
           {games &&
-            games?.map((game) => (
+            games?.slice(0, 1).map((game) => (
               <div key={game.id}>
                 <img src={game.background_image} />
                 <div>
@@ -154,63 +154,19 @@ export default function Home() {
         <H2>Trending Collection</H2>{" "}
         <BodyText>Checkout our weekly updated trending collection.</BodyText>{" "}
         <RowDiv>
-          <TrendingCards>
-            <img
-              className="big"
-              alt="NFT image"
-              src="Primary Photo Placeholder.png"
-            />
-            <img alt="NFT image" src="/Secondary Photo Placeholder (1).png" />
-            <img alt="NFT image" src="/Secondary Photo Placeholder.png" />
-            <div className="imagesNo">
-              <p>1080+</p>
-            </div>
-            <div className="textBox">
-              <H5>DSGN Animals </H5>
-              <div className="artistSection">
-                <img src="/Avatar Placeholder.png" alt="avatar image" />
-                <p>MrFox</p>
-              </div>
-            </div>
-          </TrendingCards>
-          <TrendingCards>
-            <img
-              className="big"
-              alt="NFT image"
-              src="Primary Photo Placeholder(1).png"
-            />
-            <img alt="NFT image" src="/Secondary Photo Placeholder (2).png" />
-            <img alt="NFT image" src="/Secondary Photo Placeholder (3).png" />
-            <div className="imagesNo">
-              <p>1080+</p>
-            </div>
-            <div className="textBox">
-              <H5>Magic Mushrooms</H5>
-              <div className="artistSection">
-                <img src="/Avatar Placeholder.png" alt="avatar image" />
-                <p>Mr fox</p>
-              </div>
-            </div>
-          </TrendingCards>
-          <TrendingCards>
-            <img
-              className="big"
-              alt="NFT image"
-              src="Primary Photo Placeholder (3).png"
-            />
-            <img alt="NFT image" src="/Secondary Photo Placeholder (5).png" />
-            <img alt="NFT image" src="/Secondary Photo Placeholder (6).png" />
-            <div className="imagesNo">
-              <p>1080+</p>
-            </div>
-            <div className="textBox">
-              <H5>DSGN</H5>
-              <div className="artistSection">
-                <img src="/Avatar Placeholder.png" alt="avatar image" />
-                <p>MrFox</p>
-              </div>
-            </div>
-          </TrendingCards>
+          {games &&
+            games.slice(0, 3).map((game, index) => (
+              <TrendingCards key={index}>
+                <img className="big" src={game.background_image} />
+
+                {game.short_screenshots.slice(0, 3).map((screenshot, index) => (
+                  <img key={index} src={screenshot.image} />
+                ))}
+                <div className="game-title">
+                  <p>{game.name}</p>{" "}
+                </div>
+              </TrendingCards>
+            ))}
         </RowDiv>
       </TrendingDiv>
       <TopCreators>
