@@ -112,7 +112,7 @@ const Navbar = () => {
     <NavbarContainer>
       <NavbarLogo>
         <StyledSvg color={theme.callToAction} />
-        NFL Marketplace
+        NFTGameHub
       </NavbarLogo>
       <NavbarLinks>
         <li>

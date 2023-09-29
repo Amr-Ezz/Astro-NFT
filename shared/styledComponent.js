@@ -359,10 +359,12 @@ export const DiscoverCard = styled.div`
   font-weight: 600;
   flex-direction: column;
   border-radius: 20px;
-  width: fit-content;
-  height: fit-content;
   background-color: ${(props) => props.theme.backgroundSecondary};
   transition: transform 0.3s ease;
+  .game_image {
+    width: 100%;
+    height: 50%;
+  }
   &:hover {
     transform: scale(1.05);
     cursor: pointer;
@@ -410,7 +412,7 @@ export const MushroomBanner = styled.div`
     z-index: 2;
     background: linear-gradient(
       to top,
-      ${(props) => props.theme.gradientPrimary},
+      ${(props) => props.theme.background},
       transparent
     );
   }

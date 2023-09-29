@@ -77,7 +77,7 @@ export default function Home() {
         <Captiondiv>
           <H1>
             Discover
-            <br /> Digital Art <br /> & Collective NFTs
+            <br /> Latest Games <br /> & Collective NFTs
           </H1>
 
           <BodyText>
@@ -151,7 +151,7 @@ export default function Home() {
         </Carddiv>
       </HeroSection>
       <TrendingDiv>
-        <H2>Trending Collection</H2>{" "}
+        <H2>Trending Games</H2>{" "}
         <BodyText>Checkout our weekly updated trending collection.</BodyText>{" "}
         <RowDiv>
           {games &&
@@ -407,10 +407,9 @@ export default function Home() {
         </CategoriesCards>
       </CategoriesDiv>
       <DiscoverDiv>
-        <H2>Discover More NFTs</H2>
+        <H2>Discover More Games</H2>
 
         <DiscoverHeading>
-          <BodyText>Explore New Trending NFTs</BodyText>
           <div className="button">
             <ButtonSecondary>
               {" "}
@@ -419,84 +418,35 @@ export default function Home() {
           </div>
         </DiscoverHeading>
         <DiscoverCards>
-          <DiscoverCard>
-            <img src="/Discover(1).png" />
-            <div className="discoverDes">
-              <p>NFT Name</p>
-              <div className="DiscoverSub">
-                <img src="/NFT Artist.png" />
-                <p>NFT Artist</p>
-              </div>
-              <div className="DiscoverStats">
-                <RowDiv>
-                  <div>
-                    <p>
-                      Price <br />
-                      <span>1.63 ETH</span>
-                    </p>
+          {games &&
+            games.slice(5, 8).map((game, index) => (
+              <DiscoverCard key={index}>
+                <img className="game_image" src={game.background_image} />
+                <div className="discoverDes">
+                  <p>{game.name}</p>
+                  <div className="DiscoverSub">
+                    <img src="/NFT Artist.png" />
+                    <p>Game Developer</p>
                   </div>
-                  <div>
-                    <p>
-                      Highest Bid <br />
-                      <span>0.33 wETH</span>
-                    </p>
+                  <div className="DiscoverStats">
+                    <RowDiv>
+                      <div>
+                        <p>
+                          Price <br />
+                          <span>1.63 ETH</span>
+                        </p>
+                      </div>
+                      <div>
+                        <p>
+                          Highest Bid <br />
+                          <span>0.33 wETH</span>
+                        </p>
+                      </div>
+                    </RowDiv>
                   </div>
-                </RowDiv>
-              </div>
-            </div>
-          </DiscoverCard>{" "}
-          <DiscoverCard>
-            <img src="/Discover(2).png" />
-            <div className="discoverDes">
-              <p>NFT Name</p>
-              <div className="DiscoverSub">
-                <img src="/NFT Artist.png" />
-                <p>NFT Artist</p>
-              </div>
-              <div className="DiscoverStats">
-                <RowDiv>
-                  <div>
-                    <p>
-                      Price <br />
-                      <span>1.63 ETH</span>
-                    </p>
-                  </div>
-                  <div>
-                    <p>
-                      Highest Bid <br />
-                      <span>0.33 wETH</span>
-                    </p>
-                  </div>
-                </RowDiv>
-              </div>
-            </div>
-          </DiscoverCard>{" "}
-          <DiscoverCard>
-            <img src="/Discover(3).png" />
-            <div className="discoverDes">
-              <p>NFT Name</p>
-              <div className="DiscoverSub">
-                <img src="/NFT Artist.png" />
-                <p>NFT Artist</p>
-              </div>
-              <div className="DiscoverStats">
-                <RowDiv>
-                  <div>
-                    <p>
-                      Price <br />
-                      <span>1.63 ETH</span>
-                    </p>
-                  </div>
-                  <div>
-                    <p>
-                      Highest Bid <br />
-                      <span>0.33 wETH</span>
-                    </p>
-                  </div>
-                </RowDiv>
-              </div>
-            </div>
-          </DiscoverCard>
+                </div>
+              </DiscoverCard>
+            ))}
         </DiscoverCards>
       </DiscoverDiv>
       <MushroomBanner>
@@ -506,9 +456,9 @@ export default function Home() {
               <img src="/Avatar Placeholder.png" alt="avatar image" />
               <p>Shroomie</p>
             </ArtistButton>
-            <H2>Magic Mushroom</H2>
+            <H2>Red Dead Redemption</H2>
             <ButtonTeriarty>
-              <EyeIcon /> See NFT
+              <EyeIcon /> See Game
             </ButtonTeriarty>
           </FirstColumn>
           <SecondColumn>
@@ -517,7 +467,9 @@ export default function Home() {
             <p>Hours : Minutes : Seconds</p>
           </SecondColumn>
         </div>
-        <img src="/Primary Photo Placeholder (1).png" alt="Mushroom image" />
+        {games && games[9] && (
+          <img src={games[9].background_image} alt="Mushroom image" />
+        )}
         <div className="gradient" />
       </MushroomBanner>
       <GetStarted>
@@ -575,7 +527,7 @@ export default function Home() {
             <H4>
               {" "}
               <HomeFront color={theme.callToAction} />
-              NFT Marketplace
+              NFTGameHub
             </H4>
             <p>NFT marketplace UI created with Anima for Figma.</p>
             <p>Join our community</p>
